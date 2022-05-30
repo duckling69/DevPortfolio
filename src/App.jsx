@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import Intro from './components/Intro'
+import Project from './components/Project';
 import Skills from './components/Skills';
 import './styles/App.css'
 function App() {
@@ -34,8 +35,13 @@ function App() {
 				{theme === 'dark' ? '🌙' : '🌞'}
 			</button>
       <div className='font-mono bg-white dark:bg-slate-900 trans'>
-        <Intro/>
-        <Skills/>
+        <div className='max-w-5xl mx-auto w-11/12'>
+			<Intro/>
+        	<Skills/>
+			<Project/>
+		</div>
+
+		
       </div>
     </>
     
