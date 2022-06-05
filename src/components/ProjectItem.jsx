@@ -2,7 +2,9 @@ import React from 'react'
 function ProjectItem({title,imageurl,tech}) {
   return (
     <div className='bg-slate-300 dark:bg-slate-800 rounded-lg overflow-hiddens hover:-translate-y-2 hover:bg-slate-200 dark:hover:bg-slate-700 trans'>
+        <div className='projectItem__img'>
         <img src={imageurl} alt={title} className="w-full h-36 md-48 object-cover" />
+        </div>
         <div className='text-gray-600 dark:text-gray-300 p-5 w-full'>
            <h3 className='trans text-lg md-text-xl mb-2 md:mb-3 font-semibold'>{title}</h3>
            <p className='trans flex flex-wrap gap-2 flex-row items-center justify-start text-xs md:text-sm '>

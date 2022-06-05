@@ -7,7 +7,8 @@ import './styles/styles.css';
 
 function Skills() {
   return (
-    <div className='py-12'>
+
+    <div className='py-12' id='Skills'>
       <SectionTile>Skill Set</SectionTile>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
         {skillset.map(skills => (
