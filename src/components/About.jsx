@@ -1,18 +1,35 @@
-import React from 'react'
-import SectionTitle from '../components/SectionTitle'
+import React from 'react';
+import myImg from '../images/image.png';
+import SectionTitle from './SectionTitle';
 
 function About() {
   return (
-    <div>
-    <div className='w-full md:w-6/12'>
-    <SectionTitle>About Me</SectionTitle>
-    <p>
-        
-    </p>
-    </div>
-    <img src='../src/images/profile.png' alt="" className='w-6/12 lg:w-1/3 lg:h-1/3 rounded-full object-cover'/>
-    </div>
-  )
+    <section id='About'>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 py-12">
+        <div className="w-full md:w-6/12">
+          <SectionTitle>About Me</SectionTitle>
+          <p className="text-md text-gray-600 dark:text-gray-300">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            veniam dolor consectetur pariatur explicabo, iure nulla. Dolor
+            debitis, natus cum ad, fugiat excepturi minima culpa atque modi
+            accusantium vel voluptatem?
+          </p>
+          <a
+            href="mailto:webcifar.com"
+            className="block mt-3 text-md md:text-lg text-gray-700 dark:text-gray-300 underline decoration-1 hover:text-indigo-500 dark:hover:text-indigo-500"
+          >
+            vivekjha3080@gmail.com
+          </a>
+        </div>
+
+        <img
+          src={myImg}
+          alt="Vivek"
+          className="w-full md:w-6/12 rounded-2xl object-cover"
+        />
+      </div>
+    </section>
+  );
 }
 
-export default About
+export default About;

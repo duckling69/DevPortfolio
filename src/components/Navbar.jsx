@@ -61,66 +61,63 @@ const NavStyles = styled.nav`
         margin-bottom: 1rem;
       }
     }
-
-
-
-`;
+  }`
 /*className='trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl*/
 function Navbar() {
   const [showNav, setShowNav] = useState(false);
   return (
     <NavStyles className=' text-center justify-center  '>
+      <div
+        className="mobile-menu-icon text-gray-200 w-8 absolute z-10 right-2 top-2.5 text-lg m-3 p-1 rounded-md bg-indigo-600"
+        onClick={() => setShowNav(!showNav)}
+        role="button"
+        onKeyDown={() => setShowNav(!showNav)}
+        tabIndex={0}
+      >
+        <MdMenu />
+      </div>
+      <ul className={!showNav ? 'navItems hide-item' : 'navItems'}>
         <div
-            className="mobile-menu-icon text-gray-200 w-8 absolute z-10 right-2 top-2.5 text-lg m-3 p-1 rounded-md bg-indigo-600"
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
+          className="closeNavIcon"
+          onClick={() => setShowNav(!showNav)}
+          role="button"
+          onKeyDown={() => setShowNav(!showNav)}
+          tabIndex={0}
         >
-            <MdMenu />
+          <MdClose className='text-gray-300 text-lg w-8' />
         </div>
-        <ul  className={!showNav ? 'navItems hide-item':'navItems'}>
-            <div
-            className="closeNavIcon"
+        <div className=''>
+          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='home'
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0} >Home</Link>
+          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='Skills'
             onClick={() => setShowNav(!showNav)}
             role="button"
             onKeyDown={() => setShowNav(!showNav)}
             tabIndex={0}
-            >
-            <MdClose className='text-gray-300 text-lg w-8' />
-            </div>
-            <div className=''>
-            <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='home'
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0} >Home</Link>
-            <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='Skills' 
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0}
-             >Skills</Link>
-            <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='projects' 
+          >Skills</Link>
+          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='projects'
             onClick={() => setShowNav(!showNav)}
             role="button"
             onKeyDown={() => setShowNav(!showNav)}
             tabIndex={0}
-            >Projects</Link>
-            <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='About'
+          >Projects</Link>
+          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='About'
             onClick={() => setShowNav(!showNav)}
             role="button"
             onKeyDown={() => setShowNav(!showNav)}
             tabIndex={0}
-             >About</Link>
-            <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='Contact'
+          >About</Link>
+          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='Contact'
             onClick={() => setShowNav(!showNav)}
             role="button"
             onKeyDown={() => setShowNav(!showNav)}
             tabIndex={0}
-             >Contact</Link>
-            </div>
-        </ul>
+          >Contact</Link>
+        </div>
+      </ul>
     </NavStyles>
   )
 }
