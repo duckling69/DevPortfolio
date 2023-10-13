@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import About from './components/About';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import Intro from './components/Intro'
 import Navbar from './components/Navbar';
 import Project from './components/Project';
