@@ -63,11 +63,11 @@ function Project() {
   return (
     <ProjectSectionStyle>
 
-    <div id='projects' className=''>
-    
-      <SectionTitle id={projects}>Projects</SectionTitle>
-      <div id='projects__allItems ' className='h-100'>
-        <Swiper
+      <div id='projects' className=''>
+
+        <SectionTitle id={projects}>Projects</SectionTitle>
+        <div id='projects__allItems ' className='h-100'>
+          <Swiper
             spaceBetween={30}
             slidesPerView={1}
             navigation
@@ -83,8 +83,8 @@ function Project() {
               },
             }}
           >
-        
-        {projects.map((project, index) => {
+
+            {projects.map((project, index) => {
               if (index >= 4) return;
               return (
                 <SwiperSlide key={project.title}>
@@ -92,13 +92,14 @@ function Project() {
                     title={project.title}
                     imageurl={project.imageurl}
                     tech={project.tech}
+                    link={project.link}
                   />
                 </SwiperSlide>
               );
             })}
-        </Swiper>
+          </Swiper>
+        </div>
       </div>
-    </div>
     </ProjectSectionStyle>
 
   )
