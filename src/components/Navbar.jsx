@@ -39,11 +39,12 @@ const NavStyles = styled.nav`
     .navItems {
       --top: 1rem;
       transition: 0.3s ease transform;
-      background-color: rgb(99 102 241);
-      padding: 2rem;
-      width: 90%;
+      background-color: #18181b;
+      border: 1px solid #27272a;
+      padding: 1.25rem;
+      width: 88%;
       max-width: 300px;
-      border-radius: 12px;
+      border-radius: 14px;
       position: absolute;
       right: 1rem;
       top: var(--top);
@@ -58,7 +59,7 @@ const NavStyles = styled.nav`
       }
       #Link {
         display: block;
-        margin-bottom: 1rem;
+        margin-bottom: 0.35rem;
       }
     }
   }`
@@ -68,7 +69,7 @@ function Navbar() {
   return (
     <NavStyles className=' text-center justify-center  '>
       <div
-        className="mobile-menu-icon text-gray-200 w-8 absolute z-10 right-2 top-2.5 text-lg m-3 p-1 rounded-md bg-indigo-600"
+        className="mobile-menu-icon text-white w-8 absolute z-10 right-3 top-3 text-lg p-1.5 rounded-md bg-zinc-900 border border-zinc-700"
         onClick={() => setShowNav(!showNav)}
         role="button"
         onKeyDown={() => setShowNav(!showNav)}
@@ -86,36 +87,29 @@ function Navbar() {
         >
           <MdClose className='text-gray-300 text-lg w-8' />
         </div>
-        <div className=''>
-          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='home'
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0} >Home</Link>
-          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='Skills'
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
-          >Skills</Link>
-          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='projects'
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
-          >Projects</Link>
-          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='About'
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
-          >About</Link>
-          <Link id='Link' className='cursor-pointer trans mx-2 inline-block h-10 text-gray-700 hover:bg-slate-500 text-center justify-center py-1 dark:text-gray-300 hover:text-gray-200 hover:-translate-y-2 rounded-lg text-2xl p-3' smooth={true} duration={1000} to='Contact'
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
-          >Contact</Link>
+        <div className="">
+          {[
+            { to: "home", label: "Home" },
+            { to: "experience", label: "Experience" },
+            { to: "projects", label: "Projects" },
+            { to: "skills", label: "Skills" },
+            { to: "about", label: "About" },
+            { to: "Contact", label: "Contact" },
+          ].map((item) => (
+            <Link
+              key={item.to}
+              id="Link"
+              className="cursor-pointer trans mx-1.5 inline-block h-9 text-sm md:text-base px-3 text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-lg py-1.5"
+              smooth={true}
+              duration={700}
+              to={item.to}
+              onClick={() => setShowNav(!showNav)}
+              role="button"
+              tabIndex={0}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </ul>
     </NavStyles>

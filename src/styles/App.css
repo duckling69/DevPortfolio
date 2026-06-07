@@ -1,27 +1,34 @@
-.cursor::after {
-    display: block;
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 100%;
-    background-color: #fff;
-    animation: cursor 0.6s linear infinite alternate;
-    will-change: opacity;
-  }
-  
-  @keyframes cursor {
-    0%,
-    40% {
-      opacity: 1;
-    }
-  
-    60%,
-    100% {
-      opacity: 0;
-    }
-  }
-  .trans {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 1000ms;
+/* Base page background — ensures full viewport coverage and eliminates any "no background" flash or white bleed */
+html,
+body,
+#root {
+  background-color: #09090b; /* zinc-950 */
+  color: #e4e4e7;
+  min-height: 100%;
+}
+
+/* Light mode overrides (when toggle is used) */
+html.light,
+html.light body,
+html.light #root {
+  background-color: #f8f8f8;
+  color: #18181b;
+}
+
+/* Legacy typewriter + transition helpers. Most UI now uses Tailwind transitions. */
+.trans {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Subtle focus styles for accessibility */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Ensure the main app wrapper always has solid bg */
+.min-h-screen {
+  background-color: inherit;
 }

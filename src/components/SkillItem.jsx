@@ -1,22 +1,27 @@
-import React from 'react'
-import './styles/styles.css';
-function SkillItem({title,icon,tech}) {
+import React from 'react';
+
+function SkillItem({ title, icon, tech }) {
   return (
-    <div className=' bg-slate-300 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700
-    hover:-translate-y-2 p-5 trans rounded-md hover:tran'>
-        <div className='trans text-gray-800 dark:text-gray-300 w-6 h-6 mb-3'>
-            {icon}
+    <div className="group bg-zinc-900/70 border border-zinc-800 rounded-2xl p-6 hover:border-indigo-500/30 transition-all">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="w-8 h-8 text-indigo-400">
+          {icon}
         </div>
-        <h1 className='trans font-semibold text-lg text-gray-600 dark:text-gray-200
-        mb-1'>{title}</h1>
-        <p className='flex flex-wrap gap-2 flex-row items-center justify-start text-xs md:text-sm '>
-            {tech.map(items=>(
-            <span className="trans inline-block px-2 py-1 bg-slate-200 dark:bg-slate-900 rounded-md text-md text-gray-600 dark:text-gray-300">{items}</span>
-        )) }
-        </p>
+        <h3 className="font-semibold text-xl tracking-tight text-white">{title}</h3>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {tech.map((item, idx) => (
+          <span
+            key={idx}
+            className="inline-block px-3 py-1 text-sm rounded-lg bg-zinc-950 border border-zinc-800 text-zinc-300 group-hover:border-zinc-700 transition"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default SkillItem
-//
+export default SkillItem;

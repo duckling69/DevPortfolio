@@ -14,6 +14,9 @@ const GlobalStyles = createGlobalStyle`
     --white : white;
     --black: black;
   }
+  body {
+    background-color: #09090b;
+  }
   ul,li{
     list-style: none;
   }
