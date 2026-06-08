@@ -7,7 +7,6 @@ function Intro() {
     { label: "1st Prize", value: "Solana Cypherpunk" },
     { label: "Infra", value: "50k+ users" },
     { label: "DAO", value: "$20M ATH" },
-    { label: "Optimization", value: "73% cost ↓" },
   ];
 
   const scrollToExperience = () => {
@@ -37,7 +36,7 @@ function Intro() {
         </p>
 
         {/* Impact Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full mb-10">
           {stats.map((stat, i) => (
             <div key={i} className="rounded-xl border border-zinc-800 bg-zinc-950/60 px-4 py-3">
               <div className="text-xs uppercase tracking-widest text-zinc-500">{stat.label}</div>
@@ -89,19 +88,10 @@ function Intro() {
           >
             <Mail className="w-4 h-4" /> Email
           </a>
-
-          <a
-            href="https://www.linkedin.com/in/vivek-jha-17000918b"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 h-12 rounded-xl bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-white font-medium transition-colors"
-          >
-            Resume on LinkedIn
-          </a>
         </div>
 
         <div className="mt-6 text-xs text-zinc-500">
-          Also on <a href="https://x.com/0xjuniordev" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-400">X (@0xjuniordev)</a> • <a href="https://leetcode.com/vivekjha3080" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-400">LeetCode</a> • <a href="https://www.codechef.com/users/shanks69" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-400">CodeChef (3★)</a>
+          Also on <a href="https://leetcode.com/vivekjha3080" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-400">LeetCode</a> • <a href="https://www.codechef.com/users/shanks69" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-400">CodeChef (3★)</a>
         </div>
       </div>
     </section>
