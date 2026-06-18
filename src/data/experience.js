@@ -4,16 +4,17 @@
 export default [
   {
     company: "Crshmarket (formerly KupidTV)",
-    companyUrl: "https://www.linkedin.com/company/kupidtv/",
-    role: "Software Engineer — Blockchain",
-    period: "Jan 2026 — Present",
+    companyUrl: "https://www.linkedin.com/company/crshmarket/",
+    role: "Software Engineer",
+    period: "Jan 2026 — May 2026",
     location: "Remote",
     highlights: [
-      "Developed and shipped core smart contracts across Solana (Anchor + custom TypeScript SDK) and EVM chains (Foundry), delivering production features for a live trading platform.",
-      "Reduced on-chain rent costs by 73% by refactoring Solana state design—moving away from heavy individual Position PDAs to a lightweight event-logging model.",
-      "Deployed real-time backend services and indexers using Convex and Helius RPCs, while integrating Circle and Jupiter for stablecoin operations and seamless user flows."
+      "Architected and deployed the complete **real-time backend oracle** and indexing layer for a high-frequency **livestream prediction market** (60s settlements) using **Convex** and **TypeScript**, enabling sub-second state sync and WebSocket broadcasts across dynamic LMSR-priced markets.",
+      "Designed and implemented a production **TypeScript SDK** (PredictionMarketManager + LMSR math helpers, PDA derivation, resolution tickets) that unified complex on-chain interactions, reducing frontend integration time by **40%**.",
+      "Engineered a **stateless on-chain design** combined with off-chain event-sourced resolution model (mathematical pool/payout accounting + PDA rent recovery); refactored state to lightweight event logging, cutting operational costs by **73%**.",
+      "Owned end-to-end: **Anchor/Rust** smart contract (LMSR pricing, custom math, 27+ tests, events), Express + Convex backend (oracle signing, indexing, real-time WS), SDK, scripts, and devnet deployments."
     ],
-    tech: ["Solana", "Anchor (Rust)", "TypeScript SDK", "EVM", "Solidity", "Foundry", "Convex", "Helius", "Circle", "Jupiter", "Event Indexing"]
+    tech: ["Solana", "Anchor (Rust)", "TypeScript SDK", "Convex", "LMSR", "Prediction Markets", "WebSocket", "Real-time Indexing", "Event Sourcing"]
   },
   {
     company: "YieldOS",
