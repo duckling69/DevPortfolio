@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import SectionTitle from './SectionTitle';
 import projects from '../data/projects';
 
@@ -47,12 +47,20 @@ function Project() {
 }
 
 function ProjectCard({ project, compact = false }) {
+  const openLive = (e) => {
+    e.stopPropagation();
+    if (project.live) window.open(project.live, '_blank', 'noopener,noreferrer');
+  };
+
+  const openGithub = (e) => {
+    e.stopPropagation();
+    window.open(project.github, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <a
-      href={project.github}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block h-full rounded-2xl border border-zinc-800 bg-zinc-950/60 p-6 hover:border-indigo-500/50 hover:bg-zinc-900/60 transition-all duration-300 flex flex-col"
+    <div
+      onClick={openGithub}
+      className="group block h-full rounded-2xl border border-zinc-800 bg-zinc-950/60 p-6 hover:border-indigo-500/50 hover:bg-zinc-900/60 transition-all duration-300 flex flex-col cursor-pointer"
     >
       <div className="flex items-start justify-between gap-4">
         <div>
@@ -89,7 +97,27 @@ function ProjectCard({ project, compact = false }) {
           </span>
         ))}
       </div>
-    </a>
+
+      {!compact && (
+        <div className="mt-5 pt-4 border-t border-zinc-800 flex flex-wrap gap-2">
+          <button
+            onClick={openGithub}
+            className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md border border-zinc-700 hover:border-white/70 text-zinc-300 hover:text-white transition"
+          >
+            <FaGithub className="w-3.5 h-3.5" /> GitHub
+          </button>
+
+          {project.live && (
+            <button
+              onClick={openLive}
+              className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md border border-emerald-700/60 hover:border-emerald-500 text-emerald-400 hover:text-emerald-300 transition"
+            >
+              Live Demo <FaExternalLinkAlt className="w-3 h-3" />
+            </button>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 

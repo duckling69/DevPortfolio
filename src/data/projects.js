@@ -4,6 +4,23 @@
 
 export default [
   {
+    id: "aether",
+    title: "Aether",
+    tagline: "Non-custodial RWA lending protocol",
+    description: "Full-stack decentralized lending protocol for Real World Assets. Supply yield-bearing tokens (USDY, OUSG, etc.) as collateral into an upgradeable AetherPool featuring supply, borrow, repay, liquidation, health factors, and pausable controls. Includes a clean Next.js frontend with testnet-only configuration, local transaction history, and easy test token flows. Deployed on Arbitrum Sepolia (with Robinhood testnet support).",
+    highlights: [
+      "Upgradeable Solidity pool with full liquidation logic, HF calculations, and emergency pause",
+      "Accurate price scaling, LTV/threshold configuration, and on-chain risk engine",
+      "Next.js 16 + Wagmi/Viem frontend (no mainnet RPC leakage, clean CORS handling)",
+      "Hardhat + Ignition deployments, token minting scripts, and live Vercel frontend"
+    ],
+    tech: ["Solidity", "Hardhat Ignition", "Next.js 16", "Wagmi", "Viem", "Arbitrum Sepolia", "DeFi"],
+    github: "https://github.com/duckling69/aether",
+    live: "https://aether-six-beta.vercel.app",
+    category: "EVM / DeFi",
+    featured: true
+  },
+  {
     id: "exoticlsts",
     title: "Exoticlsts",
     tagline: "High-performance yield-harvesting protocol on Solana",
